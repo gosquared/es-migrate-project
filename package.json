@@ -1,0 +1,31 @@
+{
+  "name": "es-migrate-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc || exit 0",
+    "watch": "rm -rf dist && tsc -w",
+    "start-services": "docker-compose up -d es1 es2",
+    "cleanup": "docker-compose stop && docker-compose rm -f",
+    "test": "mocha dist/test",
+    "prepublish": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "@elastic/elasticsearch": "7.13.0",
+    "elasticsearch": "^11.0.1"
+  },
+  "devDependencies": {
+    "@thedeveloper/eslint-config-styleguide": "^1.0.3",
+    "@thedeveloper/eslint-config-ts-styleguide": "^1.0.0",
+    "@types/node": "^16.7.10",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "typescript": "^4.4.2"
+  }
+}
